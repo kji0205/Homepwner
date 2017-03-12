@@ -33,7 +33,9 @@ class ItemsViewController: UITableViewController {
         let insets = UIEdgeInsetsMake(statusBarHeight, 0, 0, 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
-        
+//        tableView.rowHeight = 65
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,14 +47,28 @@ class ItemsViewController: UITableViewController {
 //        let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
         
         // 재사용 셀이나 새로운 셀을 얻는다
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        
+        // 선호하는 텍스트 크기로 라벨을 업데이트한다
+        cell.updateLabels()
         
         // 물품 배열의 n번째에 있는 항목의 설명을 n과 row와 일치하는 셀의 텍스트로 설정한다
         // 이 셀은 테이블 뷰의 n번째 행에 나타난다
         let item = itemStore.allItems[indexPath.row]
         
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+//        cell.textLabel?.text = item.name
+//        cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+        cell.nameLabel.text = item.name
+        cell.serialNumberLabel.text = item.serialNumber
+        cell.valueLabel.text = "$\(item.valueInDollars)"
+        
+        let txt = cell.valueLabel.text
+        let repTxt = (txt)?.replacingOccurrences(of: "$", with: "")
+        
+        if Int(repTxt!)! >= 50 {
+            cell.valueLabel.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        }
         
         return cell
     }
