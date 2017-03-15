@@ -14,25 +14,25 @@ class ItemsViewController: UITableViewController {
             tableView.insertRows(at: [indexPath], with: .automatic)
         }
     }
-    @IBAction func toggleEditingMode(_ sender: AnyObject){
-        if isEditing {
-            sender.setTitle("Edit", for: .normal)
-            setEditing(false, animated: true)
-        } else{
-            sender.setTitle("Done", for: .normal)
-            setEditing(true, animated: true)
-        }
-    }
+//    @IBAction func toggleEditingMode(_ sender: AnyObject){
+//        if isEditing {
+//            sender.setTitle("Edit", for: .normal)
+//            setEditing(false, animated: true)
+//        } else{
+//            sender.setTitle("Done", for: .normal)
+//            setEditing(true, animated: true)
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // 상태 바의 높이를 얻는다
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
-        let insets = UIEdgeInsetsMake(statusBarHeight, 0, 0, 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
+//        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+//        
+//        let insets = UIEdgeInsetsMake(statusBarHeight, 0, 0, 0)
+//        tableView.contentInset = insets
+//        tableView.scrollIndicatorInsets = insets
 //        tableView.rowHeight = 65
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
@@ -121,5 +121,17 @@ class ItemsViewController: UITableViewController {
                 detailViewController.item = item
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        tableView.reloadData()
+    }
+    
+    required init?(coder aDecoder: NSCoder){
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 }

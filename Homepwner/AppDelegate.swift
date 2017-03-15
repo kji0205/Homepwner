@@ -21,8 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let itemStore = ItemStore()
         
         // ItemViewController에 접근하여 itemStore를 설정한다
-        let itemController = window!.rootViewController as! ItemsViewController
-        itemController.itemStore = itemStore
+//        let itemController = window!.rootViewController as! ItemsViewController
+        let navController = window!.rootViewController as! UINavigationController
+        let itemsController = navController.topViewController as! ItemsViewController
+        itemsController.itemStore = itemStore
         
         return true
     }
