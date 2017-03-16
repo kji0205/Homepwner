@@ -17,6 +17,7 @@
 		BF8226D91E69BB360060D270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF8226D71E69BB360060D270 /* LaunchScreen.storyboard */; };
 		BFB7A6B91E6A59F800269A15 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7A6B81E6A59F800269A15 /* ItemsViewController.swift */; };
 		BFBFA8A81E6B328B00CE568F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBFA8A71E6B328B00CE568F /* TableViewController.swift */; };
+		BFD9816B1E7AD83000B1DDB0 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD9816A1E7AD83000B1DDB0 /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BF8226DA1E69BB360060D270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFB7A6B81E6A59F800269A15 /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		BFBFA8A71E6B328B00CE568F /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		BFD9816A1E7AD83000B1DDB0 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				BF8226D51E69BB360060D270 /* Assets.xcassets */,
 				BF8226D71E69BB360060D270 /* LaunchScreen.storyboard */,
 				BF8226DA1E69BB360060D270 /* Info.plist */,
+				BFD9816A1E7AD83000B1DDB0 /* ImageStore.swift */,
 				BFB7A6B81E6A59F800269A15 /* ItemsViewController.swift */,
 			);
 			path = Homepwner;
@@ -155,6 +158,7 @@
 				BFB7A6B91E6A59F800269A15 /* ItemsViewController.swift in Sources */,
 				BF7FE3B21E6A75AC00AF3C4F /* Item.swift in Sources */,
 				BF2170CF1E74F7950032A7CC /* ItemCell.swift in Sources */,
+				BFD9816B1E7AD83000B1DDB0 /* ImageStore.swift in Sources */,
 				BF2AB79D1E6AA2FE00CE34E9 /* ItemStore.swift in Sources */,
 				BFBFA8A81E6B328B00CE568F /* TableViewController.swift in Sources */,
 				BF8226CF1E69BB360060D270 /* AppDelegate.swift in Sources */,
